@@ -13,8 +13,6 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-
-
 session_destroy();
 //redirección
 header("Location: ../index.php");
