@@ -15,7 +15,7 @@
     <div class="container">
         <div class="cLeft">
             <img src="img/fondo1.jpg" alt="Descripción de la imagen">
-            <p>soporte tecnico | salir</p>
+            <p>soporte tecnico | <a href="./controllers/cerrar_sesion.php"> salir</a> </p>
             <h1>RePOS</h1>
         </div>
 
@@ -25,7 +25,7 @@
                     <br>
                     <p class="name">Usuario: </p><input class="in" type="text" name="email" placeholder="">
                     <p class="name">Contraseña: </p><input class="in" type="password" name="pass" placeholder="">
-                    <input class="button login__submit" type="submit" name="btnLogin" value="Iniciar Sesión">	
+                    <input class="button login__submit" type="submit" name="btnLogin" value="Ianiciar Sesión">	
                     <br>
                 </form>
             </div>
