@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['userid'] = $userId;
 
         //Redirigir a la página de éxito
-        header("Location: ../Views/adentro.php");
+        header("Location: ../Views/home.php");
         exit();
     } else {
         //Credenciales incorrectas

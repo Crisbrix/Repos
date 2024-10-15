@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Distribución de Mesas</title>
-    <link rel="stylesheet" href="../style/wall.css">
+    <link rel="stylesheet" href="../styles/wall.css">
 </head>
 <body>
     <!-- Menú de Navegación -->
@@ -14,7 +14,7 @@
             <li><a href="#funcion2">Función 2</a></li>
             <li><a href="#funcion3">Función 3</a></li>
             <li><a href="#funcion4">Función 4</a></li>
-            <li><a href="#logout">Cerrar Sesión</a></li>
+            <li><a href="../controllers/logout.php">Cerrar Sesión</a></li>
         </ul>
     </nav>
 
