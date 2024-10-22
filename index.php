@@ -28,6 +28,7 @@
         <a href="#">Forgot password?</a>
       </div>
       <button type="submit">Iniciar Sesión</button>
+      <button type="submit">Invitado</button>
     </form>
   </div>
 </body>

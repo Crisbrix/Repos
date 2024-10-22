@@ -1,8 +1,7 @@
 <?php
-        include("../controllers/conexion.php");
-        include("../controllers/tableC.php");
-        session_start();
-    ?>
+  include("../controllers/conexion.php");
+  include("../controllers/tableC.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
