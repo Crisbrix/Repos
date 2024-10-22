@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RePOS</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/fontStyles.css">
 </head>
 <body>
   <div class="wrapper">
     <?php
         include("controllers/conexion.php");
-        include("controllers/login.php");
+        include("controllers/loginC.php");
     ?>
     <form method="POST">
       <h2>Bienvenido</h2>

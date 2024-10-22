@@ -1,23 +1,50 @@
+<?php
+    session_start();
+
+    include("../controllers/conexion.php");
+
+    if (isset($_SESSION['userid'])) {
+        $userId = $_SESSION['userid'];  
+    } else {
+        header("Location: ../index.php");
+    } 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../styles/wall.css">
+    <title>RePOS</title>
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/fontStyles.css">
 </head>
 <body>
     <!-- Menú de Navegación -->
     <nav>
         <ul>
-            <li><a href="#funcion1">Función 1</a></li>
-            <li><a href="#funcion2">Función 2</a></li>
-            <li><a href="#funcion3">Función 3</a></li>
-            <li><a href="#funcion4">Función 4</a></li>
-            <li><a href="../controllers/logout.php">Cerrar Sesión</a></li>
+            <li><a><?php
+            // Consulta SQL para verificar las credenciales del usuario
+            $sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
+            $result = $conn->query($sql);
+
+            $row = $result->fetch_assoc();
+            $name = ucfirst($row["nombre"]);
+            $rol = ucfirst($row["rol"]);
+            if ($result->num_rows > 0) {
+                echo $rol;
+            }
+            
+        ?></a></li>
+            <li><a class="link" href="#funcion1">Adicion Pedido</a></li>
+            <li><a class="link" href="#funcion2">Modificar Pedido</a></li>
+            <li><a class="link" href="table.php">Cerrar Cuenta</a></li>
+            <li><a class="link" href="#funcion4">Ver pedido</a></li>
+            <li><a class="link" href="../controllers/logout.php">Cerrar Sesión</a></li>
+            <?php 
+                echo $name;
+            ?>
         </ul>
     </nav>
-
     <!-- Sección de Mesas -->
     <div class="container">
         <!-- Alcón Derecho -->
@@ -83,7 +110,7 @@
 
         <!-- Tercera Sección -->
         <div class="section" id="tercera-seccion">
-            <h2>Tercera Sección</h2>
+            <h2>Palco</h2>
             <div class="mesas">
                 <!-- Generar mesas del 51 al 70 -->
                 <div class="mesa" id="mesa51">51</div>

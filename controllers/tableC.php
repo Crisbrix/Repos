@@ -4,23 +4,22 @@ include("conexion.php");
 
 //Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
+    $table = $_POST['table'];
 
     // Consulta SQL para verificar las credenciales del usuario
-    $sql = "SELECT usuario_id, nombre FROM usuarios WHERE usuario = '$user' AND pass = '$pass'";
+    $sql = "SELECT mesa_id, numero_mesa FROM mesas WHERE mesa_id = '$table'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         //Inicio de sesión exitoso
         $row = $result->fetch_assoc();
-        $userId = $row['usuario_id'];
+        $mesa = $row['mesa_id'];
 
         //Almacenar el ID del usuario en la sesión
-        $_SESSION['userid'] = $userId;
+        $_SESSION['mesaId'] = $mesa;
 
         //Redirigir a la página de éxito
-        header("Location: ../Views/home.php");
+        header("Location: ../Views/bill.php");
         exit();
     } else {
         //Credenciales incorrectas
@@ -32,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: red;
             border-radius:5px;
             color:white;}
-            </style><p class='err'>Usuario no encontrado</p>";
+            </style><p class='err'>Mesa no encontrada</p>";
     }
 }
 

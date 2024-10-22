@@ -5,10 +5,10 @@ const mesas = document.querySelectorAll('.mesa');
 mesas.forEach(mesa => {
     mesa.addEventListener('click', () => {
         // Alternar la clase 'activa'
-        if (mesa.style.backgroundColor == 'green') {
-            mesa.style.backgroundColor = 'red'; // Mesa inactiva (roja)
+        if (mesa.style.backgroundColor == 'red') {
+            mesa.style.backgroundColor = 'green'; // Mesa inactiva (roja)
         } else {
-            mesa.style.backgroundColor = 'green'; // Mesa activa (verde)
+            mesa.style.backgroundColor = 'red'; // Mesa activa (verde)
         }
     });
 });
