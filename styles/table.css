@@ -7,7 +7,7 @@ body {
   padding: 0 10px;
 }
 
-body::before {
+/*body::before {
   content: "";
   position: absolute;
   width: 100%;
