@@ -47,7 +47,7 @@
         </ul>
     </nav>
 
-    <h2 class="tittle">Mesas del Restaurante</h2>
+    <h2 class="tittle">La Kamelia</h2>
     <div class="containerTable">
         <!-- Sección Alcón Derecho -->
         <div class="section">
