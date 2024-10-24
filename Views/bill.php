@@ -101,7 +101,9 @@
                 $conn->close();
             ?>
         </table>
-        <a href="home.php">salir</a>
+        <a href="home.php">
+            <button type="button">salir</button>
+        </a>
     </div>
 </body>
 </html>

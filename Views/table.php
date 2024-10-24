@@ -19,7 +19,12 @@
         <input type="text" required name="table">
         <label>Ingrese la mesa que desea</label>
       </div>
-      <button type="submit">Enviar</button>
+      <div class="buttons">
+        <a href="home.php">
+          <button class="exit" type="button">Salir</button>
+        </a>
+        <button type="submit">Enviar</button>
+      </div>
     </form>
   </div>
 </body>

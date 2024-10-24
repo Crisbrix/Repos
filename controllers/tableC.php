@@ -18,8 +18,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Almacenar el ID del usuario en la sesión
         $_SESSION['mesaId'] = $mesa;
 
-        //Redirigir a la página de éxito
-        header("Location: ../Views/bill.php");
+        if (isset($_GET['action'])) {
+            switch ($_GET['action']) {
+                case 'add':
+                    header('Location: adicion.php');
+                    break;
+                case 'edit':
+                    header('Location: modifyorder.php');
+                    break;
+                case 'close':
+                    header('Location: bill.php');
+                    break;
+                case 'view':
+                    header('Location: ver_pedido.php');
+                    break;
+                default:
+                    echo "Acción no válida.";
+            }
+        }
         exit();
     } else {
         //Credenciales incorrectas
@@ -37,4 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 //Cerrar la conexión a la base de datos
 $conn->close();
+
 ?>

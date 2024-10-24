@@ -27,8 +27,12 @@
       <div class="forget">
         <a href="#">Forgot password?</a>
       </div>
-      <button type="submit">Iniciar Sesión</button>
-      <button type="submit">Invitado</button>
+      <div class="buttons">
+        <a href="views/nkitchen.php">
+          <button type="button">Invitado</button>
+        </a>
+        <button type="submit">Iniciar Sesión</button>
+      </div>
     </form>
   </div>
 </body>

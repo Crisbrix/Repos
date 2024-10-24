@@ -15,8 +15,7 @@ include("conexion.php");
       JOIN Mesas m ON p.mesa_id = m.mesa_id
       JOIN DetallePedido dp ON p.pedido_id = dp.pedido_id
       JOIN Productos pr ON dp.producto_id = pr.producto_id
-      WHERE p.pedido_id = 1
-      AND pr.categoria = 'platos'"; // Utilizamos un placeholder para evitar inyecciones SQL
+      WHERE  pr.categoria = 'platos'"; // Utilizamos un placeholder para evitar inyecciones SQL
 
  // Ejecutar la consulta
  $result = $conn->query($sql);
@@ -36,16 +35,17 @@ include("conexion.php");
              <th>Cantidad</th>
              <th>Subtotal</th>
            </tr>";
+           while ($row = $result->fetch_assoc()) {
          echo "<tr>";
-         echo "<td>" . htmlspecialchars($row['pedido_id']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['mesero']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['numero_mesa']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['fecha_hora']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['producto']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['cantidad']) . "</td>";
-         echo "<td>" . htmlspecialchars($row['subtotal']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['pedido_id']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['mesero']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['numero_mesa']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['estado']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['fecha_hora']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['producto']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['cantidad']) . "</td>";
+          echo "<td>" . htmlspecialchars($row['subtotal']) . "</td>";
          echo "</tr>";
-     
+           }
      echo "</table>";
  }

@@ -7,15 +7,14 @@ body {
   padding: 0 10px;
 }
 
-/*body::before {
-  content: "";
+body:before {
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: #efefef;
   background-position: center;
   background-size: cover;
-}*/
+}
 
 .wrapper {
   width: 400px;
@@ -81,7 +80,12 @@ h2 {
   text-decoration: underline;
 }
 
+.buttons{
+  float: left;
+}
+
 button {
+  width: 48%;
   background: #856a3f;
   color: #fff;
   font-weight: 600;
@@ -93,9 +97,13 @@ button {
   border: 2px solid transparent;
   transition: 0.3s ease;
 }
-
 button:hover {
   color: #fff;
   border-color: #333;
-  background: rgb(112, 0, 0);
+  background: rgb(72, 160, 0);
+}
+.exit:hover {
+  color: #fff;
+  border-color: #333;
+  background: rgb(139, 0, 0);
 }
