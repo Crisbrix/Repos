@@ -8,44 +8,114 @@ body {
     align-items: center;
 }
 
-/* Menú de navegación */
-.tittle{
-  font-family: "Dancing Script", serif;
-  font-optical-sizing: auto;
-  font-size: 45px;
-  font-weight: weight;
-  font-style: normal;
-  color: #feac00;
-}
-nav {
-    
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Estilo general para la barra de navegación */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para los elementos de la lista */
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+  position: relative;
+  margin-right: 15px;
 }
 
-nav ul li .link {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+/* Estilo para los enlaces */
+nav ul li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
-nav ul li .link:hover {
-    text-decoration: underline;
+/* Hover sobre los enlaces */
+nav ul li a:hover {
+  background-color: #34495e;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
+/* Estilo del menú desplegable */
+.dropdown {
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  font-weight: bold;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* Flecha hacia abajo junto al rol del usuario */
+.dropbtn:after {
+  content: " ▼";
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Estilo para el contenido del menú desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ecf0f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  right: 0;
+  top: 100%;
+  border-radius: 8px;
+}
+
+/* Estilo para los enlaces dentro del menú desplegable */
+.dropdown-content a {
+  color: #2c3e50;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover sobre los enlaces del menú desplegable */
+.dropdown-content a:hover {
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+/* Mostrar el menú desplegable al hacer hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo para el nombre del usuario */
+.user-name {
+  color: #ecf0f1;
+  font-weight: bold;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #34495e;
+}
 /*----------------------------*/
 h3{
   padding: 15px;

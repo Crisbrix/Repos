@@ -18,29 +18,35 @@
     <!-- Menú de Navegación -->
     <nav>
         <ul>
-            <li><a><?php
-            // Consulta SQL para verificar las credenciales del usuario
-            $sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
-            $result = $conn->query($sql);
+            <li>
+                <a><?php
+                    // Consulta SQL para verificar las credenciales del usuario
+                    $sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
+                    $result = $conn->query($sql);
 
-            $row = $result->fetch_assoc();
-            $name = ucfirst($row["nombre"]);
-            $rol = ucfirst($row["rol"]);
-            if ($result->num_rows > 0) {
-                echo $rol;
-            }
-            
-        ?></a>
-        <li><a class="link" href="table.php?action=add">Adición Pedido</a></li>
-        <li><a class="link" href="table.php?action=edit">Modificar Pedido</a></li>
-        <li><a class="link" href="table.php?action=close">Cerrar Cuenta</a></li>
-        <li><a class="link" href="table.php?action=view">Ver Pedido</a></li>
-        <li><a class="link" href="../controllers/logout.php">Cerrar Sesión</a></li>
-            <?php 
-                echo $name;
-            ?>
+                    $row = $result->fetch_assoc();
+                    $name = ucfirst($row["nombre"]);
+                    $rol = ucfirst($row["rol"]);
+                    if ($result->num_rows > 0) {
+                        echo $rol; // Mostrar el rol del usuario (ej: Mesero)
+                    }
+                ?></a>
+            </li>
+            <li><a class="link" href="table.php?action=add">Adición Pedido</a></li>
+            <li><a class="link" href="table.php?action=edit">Modificar Pedido</a></li>
+            <li><a class="link" href="table.php?action=close">Cerrar Cuenta</a></li>
+            <li><a class="link" href="table.php?action=view">Ver Pedido</a></li>
+            <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><?php 
+                echo $name; // Muestra el nombre del mesero
+            ?></a>
+                <div class="dropdown-content">
+                    <a href="../controllers/logout.php">Cerrar Sesión</a>
+                </div>
+            </li>
         </ul>
     </nav>
+
     <h2 class="tittle">Mesas del Restaurante</h2>
     <div class="containerTable">
         <!-- Sección Alcón Derecho -->
