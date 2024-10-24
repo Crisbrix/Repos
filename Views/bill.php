@@ -13,13 +13,15 @@
                 include("../controllers/billC.php");
             ?>
         </table>
-        <a href="home.php">
-            <button type="button">salir</button>
-        </a>
-        <a href="">
-            <button type="button">Cerrar Cuenta</button>
-        </a>
-            
+        <!-- Formulario corregido -->
+        <form method="POST" action="../controllers/billC.php">
+            <!-- Botón para salir -->
+            <a href="home.php">
+                <button type="button">Salir</button>
+            </a>
+            <!-- Botón para cerrar cuenta (acción de enviar formulario) -->
+            <button type="submit" name="cerrar_cuenta">Cerrar Cuenta</button>
+        </form>            
     </div>
 </body>
 </html>
