@@ -86,7 +86,7 @@ h2 {
 
 button {
   width: 48%;
-  background: #856a3f;
+  background: #2c3e50;
   color: #fff;
   font-weight: 600;
   border: none;
@@ -96,11 +96,6 @@ button {
   font-size: 16px;
   border: 2px solid transparent;
   transition: 0.3s ease;
-}
-button:hover {
-  color: #fff;
-  border-color: #333;
-  background: rgb(72, 160, 0);
 }
 .exit:hover {
   color: #fff;

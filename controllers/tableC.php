@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header('Location: bill.php');
                     break;
                 case 'view':
-                    header('Location: ver_pedido.php');
+                    header('Location: seeOrder.php');
                     break;
                 default:
                     echo "Acción no válida.";

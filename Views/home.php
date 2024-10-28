@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesas</title>
   <link rel="stylesheet" href="../styles/home.css">
+  <link rel="stylesheet" href="../styles/styles.css">
   <link rel="stylesheet" href="../styles/fontStyles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
