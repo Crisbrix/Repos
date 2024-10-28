@@ -10,7 +10,11 @@
         header("Location: ../index.php");
     } 
 
-    include("conexion.php");
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];  
+    } else {
+        header("Location: ../index.php");
+    } 
 
     // Consulta SQL para verificar las credenciales del usuario
     $sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
@@ -18,7 +22,6 @@
 
     $row = $result->fetch_assoc();
     $name = ucfirst($row["nombre"]);
-    $rol = ucfirst($row["rol"]);
 
     //.......................................................................
 

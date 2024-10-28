@@ -6,6 +6,14 @@ body {
     background-color: #f4f4f4;
     text-align: center;
   }
+
+  .tittle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: #feac00;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
   
   /* Estilo general para la barra de navegación */
   nav ul {
