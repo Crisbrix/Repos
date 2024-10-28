@@ -1,0 +1,271 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Ajusta las columnas automáticamente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio interno alrededor del grid */
+}
+
+/* Estilo para el contenedor principal de cada tarjeta de mesa */
+.mesa-container {
+    border: 5px solid #13c90d; /* Color y grosor del borde de la tarjeta */
+    border-radius: 15px; /* Esquinas redondeadas de la tarjeta */
+    background-color: #fff; /* Fondo blanco para la tarjeta */
+    padding: 20px; /* Espacio interno adicional */
+    height: 250px;  /* Altura fija para las tarjetas */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columnas */
+    justify-content: space-between; /* Distribuye el contenido verticalmente */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    position: relative; /* Necesario para el posicionamiento de botones */
+
+}
+
+/* Estilo para el encabezado de la tarjeta de mesa */
+.mesa-header {
+    display: flex; /* Usamos Flexbox para alinear los elementos */
+    justify-content: space-between; /* Coloca los elementos en los extremos (izquierda y derecha) */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    font-size: 18px; /* Tamaño de fuente del encabezado */
+    font-weight: bold; /* Negrita para el texto del encabezado */
+    margin-bottom: 20px; /* Espacio inferior entre el encabezado y el contenido */
+}
+
+/* Estilo para el número de mesa y el nombre del mesero */
+.mesa-numero, .mesero-nombre {
+    font-size: 16px; /* Tamaño de fuente para ambos elementos */
+}
+
+.mesero-nombre {
+    margin-left: 20px; /* Espacio adicional a la izquierda del nombre del mesero */
+}
+
+/* Estilo para el contenido de la mesa */
+.mesa-content {
+    flex-grow: 1; 
+    padding: 10px; /* Espacio interno alrededor del contenido */
+    background-color: #f9f9f9; /* Color de fondo del contenido */
+    border-radius: 10px; /* Esquinas redondeadas para el contenido */
+    overflow-y: auto; /* Permite scroll si hay muchos productos */
+}
+
+/* Estilo para cada producto en la tarjeta */
+.producto-item {
+    display: flex; /* Usamos Flexbox para alinear los elementos del producto */
+    justify-content: space-between; /* Espaciamos el nombre del producto y la cantidad */
+    margin-top: 20px;
+    margin-bottom: 6px; /* Espacio inferior entre cada producto */
+    font-size: 16px; /* Tamaño de fuente para el producto */
+}
+
+/* Estilo para los comentarios de los productos */
+.producto-comentario {
+    font-style: italic; /* Cursiva para el texto de comentario */
+    font-size: 14px; /* Tamaño de fuente más pequeño para comentarios */
+    color: #555; /* Color gris para el texto de comentarios */
+    margin: 0; /* Eliminar márgenes para quitar el espacio */
+    padding: 20px; /* Eliminar padding para quitar el espacio */
+    margin-bottom: 10px;
+    margin-top: 2px; /* Añadir un poco de espacio superior si es necesario */
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    max-width: 800px; /* Ancho máximo de la tabla */
+    margin: 0 auto; /* Centrar horizontalmente */
+    background-color: #fff; /* Fondo blanco para la tabla */
+    padding: 20px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+}
+
+/* Botones de estado */
+.status {
+    display: flex;
+    justify-content: center; /* Centramos los botones horizontalmente */
+    position: absolute;
+    bottom: 10px; /* Fija los botones al borde inferior */
+    left: 0;
+    right: 0;
+}
+
+.status .btn {
+    padding: 5px 15px;
+    margin: 0 5px; /* Añade un margen entre los botones */
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.status .btn.in-process {
+    background-color: #ffc402;
+}
+
+.status .btn.finished {
+    background-color: #169b04;
+    color: white;
+}
+
+.producto-estado {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-left: 10px; /* Separación del estado */
+}
+
+/* Puedes usar clases para diferentes estados, con diferentes colores */
+.producto-estado.en-proceso {
+    background-color: #ffffff; /* Amarillo para "en proceso" */
+    color: #000; /* Texto negro */
+}
+
+
+
+    /* Mantén los colores del texto */
+    .mesa-header, .producto-item, .producto-comentario {
+        color: black; /* El texto debe ser legible sobre el fondo blanco */
+    }
+
+
+    /* Reseteo de márgenes y padding para body y html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho y alto total */
+}
+
+body, html {
+    margin: 0; /* Eliminar márgenes del body y html */
+    padding: 0; /* Eliminar paddings del body y html */
+    
+}
+
+/* Estilos para la cabecera */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 2%;
+    z-index: 1000; /* Asegúrate de que la barra se muestre por encima de otros elementos */
+}
+
+/* Estilos para el título */
+.header h1 {
+    margin: 0;
+    font-family: 'Lilita One', cursive; /* Aplica la fuente Lilita One */
+    font-size: 40px; /* Aumenta el tamaño del texto "RePOS" */
+}
+
+/* Estilo compartido para los botones de "Salir" y "Menú" */
+.salir-button, .menu-button {
+    background-color: transparent; /* Fondo transparente */
+    color: white; /* Texto blanco */
+    font-family: 'Lilita One', cursive; /* Aplica la misma fuente que el título */
+    font-size: 20px; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Negrita para el texto */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Manito al pasar el cursor */
+    margin-left: 20px; /* Espacio a la izquierda de cada botón */
+}
+
+/* Estilo para el título de platos fuertes */
+.title {
+    text-align: center; /* Centra el texto */
+    font-size: 36px; /* Aumenta el tamaño de la fuente */
+    font-weight: bold; /* Negrita para el texto */
+    color: #000; /* Color del texto */
+    font-family: 'Lilita One', cursive; /* Aplica la fuente Lilita One */
+}
+
+    /* Estilo para el menú desplegable */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    /* Contenido desplegable */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    /* Estilos para los enlaces del menú desplegable */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    /* Mostrar el contenido cuando el dropdown está activo */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* Opcional: cambiar el color del texto cuando se pasa el mouse sobre los botones */
+    .salir-button:hover, .menu-button:hover {
+        color: #ccc; /* Cambia el color del texto al pasar el mouse */
+    }
+
+    .title {
+        text-align: center; /* Centra el texto */
+        font-size: 36px; /* Aumenta el tamaño de la fuente */
+        font-weight: bold; /* Negrita para el texto */
+        margin: 20px 0; /* Espacio superior e inferior */
+        color: #000; /* Color del texto, puedes cambiarlo si lo deseas */
+        font-family: 'Lilita One', cursive; /* Aplica la fuente Lilita One */
+    }
+    .nav-buttons button {
+        font-family: Arial, sans-serif; /* Aplica la fuente Arial */
+        font-size: 18px; /* Ajusta el tamaño del texto del botón */
+        color: white; /* Color del texto */
+        background-color: transparent; /* Sin fondo */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        padding: 10px; /* Espacio interno del botón */
+    }
+    
+    /* Estilo para el menú desplegable */
+    .dropdown button {
+        font-family: Arial, sans-serif; /* Asegura que el botón del menú también tenga la misma fuente */
+        font-size: 18px; /* Ajusta el tamaño del texto del botón */
+        color: white; /* Color del texto */
+        background-color: transparent; /* Sin fondo */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    }
+
+    .salir-button {
+        font-family: Arial, sans-serif;
+        /* Puedes agregar otros estilos aquí, como: */
+        background-color: none; /* color de fondo */
+        color: white; /* color del texto */
+        border: none; /* sin borde */
+        padding: 10px 20px; /* espaciado */
+        text-align: center; /* centrar el texto */
+        text-decoration: none; /* sin subrayado */
+        display: inline-block; /* para que el botón se comporte como un bloque */
+        font-size: 16px; /* tamaño de fuente */
+        cursor: pointer; /* cursor de mano al pasar sobre el botón */
+    }

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['pass'];
 
     // Consulta SQL para verificar las credenciales del usuario
-    $sql = "SELECT usuario_id, nombre FROM usuarios WHERE usuario = '$user' AND pass = '$pass'";
+    $sql = "SELECT usuario_id, nombre, rol FROM usuarios WHERE usuario = '$user' AND pass = '$pass'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -18,6 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //Almacenar el ID del usuario en la sesión
         $_SESSION['userid'] = $userId;
+
+        $rol = $row['rol'];
+        //Almacenar el rol en la sesión
+        $_SESSION['rol'] = $rol;
 
         //Redirigir a la página de éxito
         header("Location: ../Views/home.php");

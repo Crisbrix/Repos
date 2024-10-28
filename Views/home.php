@@ -34,11 +34,25 @@
                 ?></a>
             </li>
             <li><a class="link" href="table.php?action=add">Adición Pedido</a></li>
-            <li><a class="link" href="table.php?action=edit">Modificar Pedido</a></li>
-            <li><a class="link" href="table.php?action=close">Cerrar Cuenta</a></li>
             <li><a class="link" href="table.php?action=view">Ver Pedido</a></li>
+            <?php
+                if ($rol == 'Admin'){
+                    echo '<li><a class="link" href="table.php?action=edit">Modificar Pedido</a></li>';
+                    echo '<li class="dropdown dropbtn">Reportes
+                                <div class="dropdown-content">
+                                    <a href="../controllers/logout.php">Inventarios</a>
+                                    <a href="../controllers/logout.php">Personal</a>
+                                    <a href="Tips.php">Popinas</a>
+                                </div>
+                         </li>';
+                }
+
+                if ($rol == 'Admin' || $rol == 'Caja'){
+                    echo '<li><a class="link" href="table.php?action=close">Cerrar Cuenta</a></li>';
+                }
+            ?>
             <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn"><?php 
+            <a href="" class="dropbtn"><?php 
                 echo $name; // Muestra el nombre del mesero
             ?></a>
                 <div class="dropdown-content">

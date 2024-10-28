@@ -28,7 +28,7 @@
         <a href="#">Forgot password?</a>
       </div>
       <div class="buttons">
-        <a href="views/nkitchen.php">
+        <a href="views/kitchen.php">
           <button type="button">Invitado</button>
         </a>
         <button type="submit">Iniciar Sesión</button>
