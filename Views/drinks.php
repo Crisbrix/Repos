@@ -15,7 +15,7 @@
 <body>
     <nav>
         <ul>        
-            <li><p class="tittle">Repos</p></li>
+            <li><p class="tittle">REPOS</p></li>
             <li class="dropdown">
             <a href="starters.php" class="dropbtn">Menú</a>
                 <div class="dropdown-content">

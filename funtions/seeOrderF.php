@@ -32,7 +32,7 @@ function obtenerDetallesPedido($mesaId, $conn) {
         while ($row = $result->fetch_assoc()) {
             // Calcular impuestos y propina
             $totalImpuestos += $row['total'] * 0.08;
-            $totalPropina += $row['total'] * 0.1;
+            
 
             // Mostrar la fila en la tabla
             echo "<tr>
@@ -47,6 +47,7 @@ function obtenerDetallesPedido($mesaId, $conn) {
             $subtotal += $row["total"];
         }
 
+        $totalPropina += ($subtotal - $totalImpuestos)* 0.1;
         // Mostrar los totales
         echo "<tr>
             <td colspan='4'><strong>Subtotal (sin impuestos):</strong></td>
@@ -59,11 +60,16 @@ function obtenerDetallesPedido($mesaId, $conn) {
         </tr>";
 
         echo "<tr>
+            <td colspan='4'><strong>Subtotal: </strong></td>
+            <td> $ " . number_format($subtotal) . "</td>
+        </tr>";
+
+        echo "<tr>
             <td colspan='4'><strong>Total Propina (10%):</strong></td>
             <td> $ " . number_format($totalPropina) . "</td>
         </tr>";
 
-        $totalFinal = $subtotal + $totalImpuestos + $totalPropina;
+        $totalFinal = $subtotal + $totalPropina;
         echo "<tr>
             <td colspan='4'><strong>Total General:</strong></td>
             <td> $ " . number_format($totalFinal) . "</td>

@@ -7,9 +7,7 @@
     $pedidoId = 0;
     if (isset($_SESSION['mesaId'])) {
         $mesa = $_SESSION['mesaId'];  
-    } else {
-        
-    } 
+    }
 
     if (isset($_SESSION['userid'])) {
         $userId = $_SESSION['userid'];  

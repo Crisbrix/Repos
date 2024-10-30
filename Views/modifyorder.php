@@ -9,20 +9,25 @@
             <title>Modificar</title>
             <link rel="stylesheet" href="../styles/modifyorder.css">
             <link rel="stylesheet" href="../styles/fontStyles.css">
+            <link rel="stylesheet" href="../styles/styles.css">
 
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&display=swap" rel="stylesheet">
         </head>
         <body>
-            <nav>
-                <h1>Repos</h1>
-                <div class="nav-right">
-                    
-                    <h2><a href="returncontrol.php">Devoluciones </a>   |</h2>
-                    <h3><a href="home.php">salir</a></h3>
-                </div><!--fin nav-right-->
-            </nav>
+        <nav>
+            <ul>        
+                <li><p class="tittle">REPOS</p></li>
+                <li class="dropdown">
+                <a href="starters.php" class="dropbtn">Menú</a>
+                    <div class="dropdown-content">
+                        <a href="returncontrol.php">Devoluciones</a>
+                        <a href="home.php">Salir</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
             <div class="container">
                 <div class="left">
                     <div class="sup">

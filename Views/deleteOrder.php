@@ -7,19 +7,24 @@
     <title>Eliminarpedido</title>
     <link rel="stylesheet" href="../styles/deleteOrder.css">
     <link rel="stylesheet" href="../styles/fontStyles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav>
-                <h1>Repos</h1>
-                <div class="nav-right">
-                    <h2>Soporte Técnico    |</h2>
-                    <h3><a href="home.php">salir</a></h3>
+    <nav>
+        <ul>        
+            <li><p class="tittle">REPOS</p></li>
+            <li class="dropdown">
+                <a href="starters.php" class="dropbtn">Menú</a>
+                <div class="dropdown-content">
+                    <a href="home.php">Salir</a>
                 </div>
-            </nav>
+            </li>
+        </ul>
+    </nav>
             <div class="container">
                 <div class="cuadro">
                     <div class="sup">

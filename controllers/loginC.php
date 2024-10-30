@@ -28,15 +28,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         //Credenciales incorrectas
-        echo "<style>.err{ 
-            width: 70%;
+        echo "
+            <div class='error-message'>
+                <p>⚠️ Error: Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.</p>
+            </div>
+        
+        <style>
+            .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
             text-align: center;
-            height: 4vh;-
-            margin-left: 15%;
-            background-color: red;
-            border-radius:5px;
-            color:white;}
-            </style><p class='err'>Usuario no encontrado</p>";
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .error-message p {
+            margin: 0;
+        }
+        </style>";
     }
 }
 

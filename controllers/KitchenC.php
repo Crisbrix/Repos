@@ -1,10 +1,10 @@
 <?php 
-
-include("conexion.php");
 session_start();
 if (isset($_SESSION['mesaid'])) {
     $mesa = $_SESSION['mesaid'];  
 }
+include("conexion.php");
+
 // Consulta SQL
 $sql = "SELECT 
             p.pedido_id,
