@@ -1,20 +1,15 @@
 <?php
-include ("conexion.php");
+include ("../controllers/conexion.php");
 
 
-session_start();
+$mesa_id = 1; 
+$usuario_id = 1; 
 
-if (isset($_SESSION['userid'])) {
-    $userId = $_SESSION['userid'];  
-} else {
-    header("Location: ../index.php");
-} 
-if (isset($_SESSION['mesaId'])) {
-    $mesaId = $_SESSION['mesaId'];  
-}
+$numeroMesa = '';
+$nombreUsuario = '';
 
 // Consulta para obtener el número de mesa
-$queryMesa = "SELECT numero_mesa FROM mesas WHERE mesa_id = $mesaId";
+$queryMesa = "SELECT numero_mesa FROM mesas WHERE mesa_id = $mesa_id";
 $resultMesa = mysqli_query($conn, $queryMesa);
 
 if ($resultMesa && mysqli_num_rows($resultMesa) > 0) {
@@ -23,7 +18,7 @@ if ($resultMesa && mysqli_num_rows($resultMesa) > 0) {
 }
 
 // Consulta para obtener el nombre del usuario
-$queryUsuario = "SELECT nombre FROM usuarios WHERE usuario_id = $userId";
+$queryUsuario = "SELECT nombre FROM usuarios WHERE usuario_id = $usuario_id";
 $resultUsuario = mysqli_query($conn, $queryUsuario);
 if ($resultUsuario && mysqli_num_rows($resultUsuario) > 0) {
     $rowUsuario = mysqli_fetch_assoc($resultUsuario);
