@@ -34,7 +34,7 @@ while ($row = $resultBebidas->fetch_assoc()) {
 $stmtBebidas->close();
 $pedidoId = 0;
 if (isset($_SESSION['mesaId'])) {
-    $mesa = $_SESSION['mesaId'];  
+    $mesaId = $_SESSION['mesaId'];  
 } else {
     header("Location: ../index.php");
 } 
@@ -45,10 +45,14 @@ JOIN Usuarios u ON p.usuario_id = u.usuario_id
 JOIN Mesas m ON p.mesa_id = m.mesa_id
 JOIN DetallePedido dp ON p.pedido_id = dp.pedido_id
 JOIN Productos pr ON dp.producto_id = pr.producto_id
-WHERE p.pedido_id = $mesa ";
+WHERE m.numero_mesa = $mesaId;";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
+
+$row=$result->fetch_assoc();
+$pedidoId = $row['pedido_id'];
+
 while ($row = $result->fetch_assoc()) {
     $pedidos[] = [
         'nombre' => $row['mesero'],
@@ -81,10 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Aquí puedes insertar o actualizar el pedido en la base de datos
                 $mesaId = $_SESSION['mesaId']; // Asegúrate de que la mesa esté en la sesión
-                $sql = "INSERT INTO DetallePedido (pedido_id, producto_id, cantidad, subtotal, comentario) 
-                        VALUES (?, (SELECT producto_id FROM Productos WHERE nombre = ?), ?, ?, ?)";
+                $sql = "INSERT INTO DetallePedido (pedido_id, producto_id, cantidad, subtotal, comentario, estado) 
+                        VALUES (?, (SELECT producto_id FROM Productos WHERE nombre = ?), ?, ?, ?, 'pendiente')";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("issis", $mesaId, $platoSeleccionado, $cantidadSeleccionada, $subtotal, $comentario);
+                $stmt->bind_param("issis", $pedidoId, $platoSeleccionado, $cantidadSeleccionada, $subtotal, $comentario);
 
                 if ($stmt->execute()) {
                     header("Location:modifyorder.php");

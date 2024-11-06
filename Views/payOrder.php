@@ -1,6 +1,3 @@
-<?php
-include("../controllers/payOrder.php");
-?>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -37,8 +34,7 @@ include("../controllers/payOrder.php");
     <div class="container">
         <div class="header">
             <div class="logo">
-                <span style="color: #666;">100 × 100</span>
-                <img src="../img/logo1.jpg" alt="La Kamelia Logo">
+                <img src="../img/logo.png" alt="La Kamelia Logo">
             </div>
             <div class="restaurant-info">
                 <h1 class="restaurant-name">La Kamelia</h1>
@@ -47,36 +43,12 @@ include("../controllers/payOrder.php");
         </div>
         <div class="block order-summary">
             <table>
-                <tr>
-                    <th>PRODUCTO</th>
-                    <th>CANT.</th>
-                    <th>TOTAL</th>
-                </tr>
-                <tr>
-                    <td>Hamburguesa</td>
-                    <td>6</td>
-                    <td>$62.000</td>
-                </tr>
-                <tr>
-                    <td>bebidas</td>
-                    <td>8</td>
-                    <td>$40.000</td>
-                </tr>
-                <tr>
-                    <td>Entrada</td>
-                    <td>2</td>
-                    <td>$25.000</td>
-                </tr>
-                <tr class="total">
-                    <td>SubTotal</td>
-                    <td></td>
-                    <td>= $127.000</td>
-                </tr>
+                <?php include("../controllers/payOrder.php");?>
             </table>
         </div>
         <div class="block input-group">
             <label for="tip">Propina(opcional):</label>
-            <input type="text" id="tip" placeholder="ingresa el valor de la propina">
+            <input type="text" id="tip" placeholder="<?php echo $totalPropina;?>">
         </div>
         <div class="block input-group">
             <label for="payment-method">Método de Pago:</label>

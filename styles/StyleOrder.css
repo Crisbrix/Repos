@@ -1,27 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
-.header {
-    background-color: #000000; /* Changed to black */
-    padding: 10px 20px; /* Add padding to the left and right */
-    text-align: left; /* Align text to the left */
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    font-family: 'Lilita One', cursive;
-    width: 100%;
 }
 .container {
     display: flex;
     justify-content: center;
-    padding: 20px;
     flex-grow: 1;
     align-items: flex-start; /* Align items to the start */
     margin-top: 50px; /* Add margin to move the container down */

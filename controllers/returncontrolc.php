@@ -1,9 +1,7 @@
 <?php
 session_start();
 include("conexion.php");
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+$userId = $_SESSION['userid'];  
 
 $sql = "SELECT d.fecha, p.nombre AS producto, d.cantidad, p.precio, d.razon
         FROM Devoluciones d
@@ -13,6 +11,12 @@ $result = $conn->query($sql);
 if (!$result) {
     die("Error en la consulta: " . $conn->error);
 }
+
+$sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
+$result1 = $conn->query($sql);
+
+$row = $result1->fetch_assoc();
+$name = ucfirst($row["nombre"]);
 
 
 $conn->close();

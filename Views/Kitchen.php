@@ -5,23 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vista de Cocina</title>
     <link rel="stylesheet" href="../styles/Kitchen.css">
-    <link rel="stylesheet" href="../styles/fontStyles.css">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/fontStyles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Open+Sans&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <ul>        
-            <li><p class="tittle">REPOS</p></li>
+        <ul>
+            <li><a href="../index.php">Repos</a></li>
             <li class="dropdown">
-            <a href="starters.php" class="dropbtn">Menú</a>
+            <a href="" class="dropbtn">Menu</a>
                 <div class="dropdown-content">
-                    <a href="starters.php">Entradas</a>
-                    <a href="Kitchen.php">Platos Fuertes</a>
-                    <a href="drinks.php">Bebidas</a>
+                    <a href="Entry.php">Entradas</a>
+                    <a href="drink.php">Bebidas</a>
                     <a href="../index.php">Salir</a>
                 </div>
             </li>

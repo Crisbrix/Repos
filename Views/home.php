@@ -41,7 +41,7 @@
                     echo '<li class="dropdown dropbtn">Reportes
                                 <div class="dropdown-content">
                                     <a href="inventary.php">Inventarios</a>
-                                    <a href=staff.php">Personal</a>
+                                    <a href="staff.php">Personal</a>
                                     <a href="Tips.php">Popinas</a>
                                 </div>
                          </li>';

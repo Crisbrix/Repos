@@ -1,5 +1,8 @@
 <?php
 include ('Conexion.php');
+include('basic.php');
+
+$userId = $_SESSION['userid'];  
 
 function obtenerProductosPorCategoria($categoria) {
     global $conn;

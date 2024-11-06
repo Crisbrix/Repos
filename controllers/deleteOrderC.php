@@ -65,15 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmtUpdateInventario->close();
         } 
     } else {
-        // Manejo de errores si faltan datos
-        echo "Error: faltan datos.";
     }
     $pedidoId = 0;
-    if (isset($_SESSION['mesaId'])) {
-        $mesa = $_SESSION['mesaId'];  
-    } else {
-        header("Location: ../index.php");
-    } 
+
+    $mesaId = $_SESSION['mesaId'];  
 $sql = "SELECT p.pedido_id, u.nombre AS mesero, m.numero_mesa,
 p.estado, p.fecha_hora, pr.nombre AS producto, dp.cantidad, dp.subtotal, dp.detalle_id
 FROM Pedidos p
@@ -81,7 +76,7 @@ JOIN Usuarios u ON p.usuario_id = u.usuario_id
 JOIN Mesas m ON p.mesa_id = m.mesa_id
 JOIN DetallePedido dp ON p.pedido_id = dp.pedido_id
 JOIN Productos pr ON dp.producto_id = pr.producto_id
-WHERE p.pedido_id = $mesa ";
+WHERE m.numero_mesa = $mesaId ";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();

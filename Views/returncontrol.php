@@ -7,6 +7,7 @@ include("../controllers/returncontrolc.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devoluciones</title>
+    <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/returncontrol.css">
     <link rel="stylesheet" href="../styles/fontStyles.css">
 
@@ -16,11 +17,17 @@ include("../controllers/returncontrolc.php");
 </head>
 <body>
     <nav>
-        <h1>Repos</h1>
-            <div class="nav-right">
-                <h2>Soporte Técnico    |</h2>
-                <h3><a href="home.php">salir</a></h3>
-            </div><!--fin nav-right-->
+        <ul>
+            <li><a class="link" href="home.php">RePos</a></li>
+            <li><a class="link" href="table.php?action=add">Adición Pedido</a></li>
+            <li><a class="link" href="table.php?action=view">Ver Pedido</a></li>
+            <li class="dropdown">
+            <a href="" class="dropbtn"><?php echo $name?></a>
+                <div class="dropdown-content">
+                    <a href="../controllers/logout.php">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
     </nav>
     <div class="container">
         <div class="cuadro">
@@ -35,7 +42,7 @@ include("../controllers/returncontrolc.php");
             <div class="devoluciones">
                <h1>Devoluciones</h1>
                
-                <table border="1" >
+                <table border="1">
                 <tr>
                         <th>Fecha</th>
                         <th>Producto</th>

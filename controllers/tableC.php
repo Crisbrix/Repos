@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_GET['action'])) {
             switch ($_GET['action']) {
                 case 'add':
-                    header('Location: adicion.php');
+                    header('Location: order.php');
                     break;
                 case 'edit':
                     header('Location: modifyorder.php');

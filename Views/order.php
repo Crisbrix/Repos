@@ -1,5 +1,4 @@
 <?php
-include ("../controllers/conexion.php");
 include ("../controllers/ForCategory.php");
 include ("../controllers/table&user.php");
 // Obtener el número de mesa y el usuario de la URL
@@ -8,7 +7,7 @@ $usuarioId = isset($_GET['user']) ? intval($_GET['user']) : 'N/A';
 
 // Obtener productos por categoría
 $entradas = obtenerProductosPorCategoria('Entradas');
-$fuertes = obtenerProductosPorCategoria('Fuertes');
+$fuertes = obtenerProductosPorCategoria('platos');
 $bebidas = obtenerProductosPorCategoria('Bebidas');
 ?>
 <html>
@@ -17,14 +16,58 @@ $bebidas = obtenerProductosPorCategoria('Bebidas');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/StyleOrder.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/fontStyles.css">
 </head>
 <body>
-    <div class="header">RePOS</div>
+    <nav>
+        <ul>
+            <li>
+                <a href="home.php"><?php
+                    // Consulta SQL para verificar las credenciales del usuario
+                    $sql = "SELECT nombre, rol FROM usuarios WHERE usuario_id = '$userId'";
+                    $result = $conn->query($sql);
+
+                    $row = $result->fetch_assoc();
+                    $name = ucfirst($row["nombre"]);
+                    $rol = ucfirst($row["rol"]);
+                    if ($result->num_rows > 0) {
+                        echo $rol; // Mostrar el rol del usuario (ej: Mesero)
+                    }
+                ?></a>
+            </li>
+            <li><a class="link" href="table.php?action=add">Adición Pedido</a></li>
+            <li><a class="link" href="table.php?action=view">Ver Pedido</a></li>
+            <?php
+                if ($rol == 'Admin'){
+                    echo '<li><a class="link" href="table.php?action=edit">Modificar Pedido</a></li>';
+                    echo '<li class="dropdown dropbtn">Reportes
+                                <div class="dropdown-content">
+                                    <a href="inventary.php">Inventarios</a>
+                                    <a href=staff.php">Personal</a>
+                                    <a href="Tips.php">Popinas</a>
+                                </div>
+                         </li>';
+                }
+                if ($rol == 'Admin' || $rol == 'Caja'){
+                    echo '<li><a class="link" href="table.php?action=close">Cerrar Cuenta</a></li>';
+                }
+            ?>
+            <li class="dropdown">
+            <a href="" class="dropbtn"><?php 
+                echo $name; // Muestra el nombre del mesero
+            ?></a>
+                <div class="dropdown-content">
+                    <a href="../controllers/logout.php">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
         <div class="box">
             <div class="pedido-info">
             <span id="pedido-number">N°<?php echo $numeroMesa; ?></span>
-            <span id="user-name"><?php echo $nombreUsuario; ?></span>
+            <span id="user-name"><?php echo $name; ?></span>
             </div>
             <div class="type-buttons">
                 <button onclick="openEntradasModal()">Entradas</button>
@@ -204,6 +247,7 @@ $bebidas = obtenerProductosPorCategoria('Bebidas');
                 function saveChanges(type) {
                     // Aquí puedes agregar la lógica para guardar cambios en el backend si es necesario
                     alert(type + ' cambios guardados.');
+                    include("../controllers/guardar_pedido.php");
                 }
                 function sendOrder() {
                 // Obtener los datos básicos

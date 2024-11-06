@@ -20,7 +20,7 @@
                 <button type="button">Salir</button>
             </a>
             <!-- Botón para cerrar cuenta (acción de enviar formulario) -->
-            <button type="submit" name="cerrar_cuenta">Cerrar Cuenta</button>
+            <a href="payOrder.php"><button type="button" name="cerrar_cuenta">Cerrar Cuenta</button></a>
         </form>            
     </div>
 </body>
